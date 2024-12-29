@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             ShopSeeder::class,
             ThemeSeeder::class,
             UserSeeder::class,
+            ShopUserSeeder::class,
         ];
 
         foreach ($seeders as $seeder) {

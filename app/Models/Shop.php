@@ -35,7 +35,6 @@ class Shop extends Model
     public function users()
     {
         return $this->belongsToMany(User::class, 'shop_users')
-            ->withPivot('role')
             ->withTimestamps();
     }
 
