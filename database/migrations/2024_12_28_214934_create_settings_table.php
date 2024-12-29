@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('key');
             $table->text('value');
-            $table->foreignId('shop_id')->constrained()->cascadeOnDelete();
+            $table->unsignedBigInteger('shop_id');
             $table->timestamps();
         });
     }
