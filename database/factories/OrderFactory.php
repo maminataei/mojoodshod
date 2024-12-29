@@ -18,6 +18,7 @@ class OrderFactory extends Factory
     {
         return [
             'user_id' => $this->faker->numberBetween(1, 10),
+            'shop_id' => $this->faker->numberBetween(1, 10),
             'customer_name' => $this->faker->name,
             'customer_email' => $this->faker->unique()->safeEmail,
             'total_amount' => $this->faker->randomFloat(2, 100, 1000),

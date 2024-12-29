@@ -5,14 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Setting extends Model
+class ShopUser extends Model
 {
     use HasFactory;
-    protected $table = 'settings';
-    protected $fillable = ['shop_id', 'key', 'value'];
+    protected $table = 'shop_users';
+    protected $fillable = ['shop_id', 'user_id'];
 
     public function shop()
     {
         return $this->belongsTo(Shop::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

@@ -16,4 +16,30 @@ class Shop extends Model
         'theme_id',
         'description',
     ];
+
+    public function settings()
+    {
+        return $this->hasMany(Setting::class);
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'shop_users')
+            ->withTimestamps();
+    }
+
+    public function theme()
+    {
+        return $this->belongsTo(Theme::class);
+    }
 }

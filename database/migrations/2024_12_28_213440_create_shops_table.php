@@ -20,6 +20,10 @@ return new class extends Migration
             $table->unsignedBigInteger('theme_id')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
+
+            // relations
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('theme_id')->references('id')->on('themes')->onDelete('set null');
         });
     }
 

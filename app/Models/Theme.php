@@ -13,4 +13,9 @@ class Theme extends Model
         'name',
         'preview_url',
     ];
+
+    public function shop()
+    {
+        return $this->belongsTo(Shop::class);
+    }
 }
