@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Setting;
+use App\Models\Shop;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,6 +14,8 @@ class SettingSeeder extends Seeder
      */
     public function run(): void
     {
-        Setting::factory()->count(10)->create();
+        Setting::factory()
+            ->has(Shop::factory()->count(3))
+            ->count(10)->create();
     }
 }

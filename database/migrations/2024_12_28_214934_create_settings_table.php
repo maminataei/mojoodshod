@@ -18,6 +18,9 @@ return new class extends Migration
             $table->text('value');
             $table->unsignedBigInteger('shop_id');
             $table->timestamps();
+
+            // relations
+            $table->foreign('shop_id')->references('id')->on('shops')->onDelete('cascade');
         });
     }
 

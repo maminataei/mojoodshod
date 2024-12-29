@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('image_url')->nullable();
             $table->integer('stock_quantity')->default(0);
             $table->timestamps();
+
+            // relations
+            $table->foreign('shop_id')->references('id')->on('shops')->onDelete('cascade');
         });
     }
 
